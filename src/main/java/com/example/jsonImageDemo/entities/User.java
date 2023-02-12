@@ -6,13 +6,16 @@ public class User {
     private String name;
     private String city;
 
+    private String imageName;
+
     public User() {
     }
 
-    public User(int id, String name, String city) {
+    public User(int id, String name, String city, String imageName) {
         this.id = id;
         this.name = name;
         this.city = city;
+        this.imageName = imageName;
     }
 
     public int getId() {
@@ -39,12 +42,21 @@ public class User {
         this.city = city;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", city='" + city + '\'' +
+                ", imageName='" + imageName + '\'' +
                 '}';
     }
 }

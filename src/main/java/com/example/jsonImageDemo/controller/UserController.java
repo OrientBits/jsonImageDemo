@@ -30,6 +30,7 @@ public class UserController {
         User user = null;
         try {
             user = objectMapper.readValue(userData, User.class);
+            user.setImageName(file.getOriginalFilename());
         } catch (JsonProcessingException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid request");
         }
@@ -37,7 +38,7 @@ public class UserController {
 
         logger.info("User: "+user);
 
-        return ResponseEntity.ok("Done!");
+        return ResponseEntity.ok(user);
     }
 
 
